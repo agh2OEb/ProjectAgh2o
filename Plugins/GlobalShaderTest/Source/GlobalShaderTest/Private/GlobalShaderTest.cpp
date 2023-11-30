@@ -3,6 +3,7 @@
 #include "GlobalShaderTest.h"
 #include "Interfaces/IPluginManager.h"
 #include "GlobalShaderDeclaration.h"
+#include "ShaderParameterUtils.h"
 #include "Misc/Paths.h"
 #include "ShaderCore.h"
 
@@ -13,7 +14,7 @@ void FGlobalShaderTestModule::StartupModule()
 	//Plugin 폴더에 있는 usf파일을 감지할 수 있도록 Plugin Module 시작지점에 Shader 폴더를 추가합니다. 
 	auto Plugin = IPluginManager::Get().FindPlugin(TEXT("GlobalShaderTest"));
 	FString PluginShaderDirectory = FPaths::Combine(Plugin->GetBaseDir(), TEXT("Shaders"));
-	//AddShaderSourceDirectoryMapping(TEXT("/Plugin/GlobalShaderTest"), PluginShaderDirectory);
+	AddShaderSourceDirectoryMapping(TEXT("/Plugin/GlobalShaderTest"), PluginShaderDirectory);
 
 }
 

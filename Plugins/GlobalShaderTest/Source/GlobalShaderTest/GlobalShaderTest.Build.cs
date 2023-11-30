@@ -6,6 +6,7 @@ public class GlobalShaderTest : ModuleRules
 {
 	public GlobalShaderTest(ReadOnlyTargetRules Target) : base(Target)
 	{
+		OptimizeCode = CodeOptimization.Never;
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
 		
 		PublicIncludePaths.AddRange(
